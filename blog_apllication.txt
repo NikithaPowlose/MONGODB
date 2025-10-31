@@ -1,0 +1,11 @@
+use blog_application
+db.createCollection("posts")
+db.posts.insertMany([ { title: "The Great Gatsby", author: "F. Scott Fitzgerald", tags: "productivity", publishedDate: "2024-01-15" }, 
+{ title: "The Hobbit", author: "J.R.R. Tolkien", tags: "Fantasy", publishedDate: "2023-06-15" },
+{ title: "Dune", author: "Frank Herbert", tags: "Fiction", publishedDate: "2024-06-17" }, 
+{ title: "The Alchemist", author: "Paulo Coelho", tags: "Science", publishedDate: "2024-09-11" }]);
+ db.posts.createIndex({author:1})
+ db.posts.createIndex({ publishpublishedDate: -1 })
+ db.posts.getIndexes()
+ db.posts.dropIndex({ author: 1 })
+ db.posts.getIndexes()
