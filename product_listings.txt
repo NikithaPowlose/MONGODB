@@ -1,0 +1,14 @@
+use product_listings
+db.createCollection("products")
+db.products.insertMany([
+...   { name: "Laptop", category: "Electronics", price: 800, stock: 15 },
+...   { name: "Smartphone", category: "Electronics", price: 600, stock: 25 },
+...   { name: "Coffee Maker", category: "Home Appliances", price: 120, stock: 10 },
+...   { name: "Office Chair", category: "Furniture", price: 150, stock: 20 },
+...   { name: "Headphones", category: "Electronics", price: 200, stock: 30 }
+... ])
+ db.products.createIndex({ catecategory: 1 })
+  db.products.createIndex({ pricprice: -1 })
+   db.products.getIndexes()
+    db.products.dropIndex({ categocategory: 1 })
+    db.products.getIndexes()
