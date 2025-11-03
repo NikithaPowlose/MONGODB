@@ -1,0 +1,16 @@
+use mashup
+db.createCollection("students")
+db.students.insertMany([
+  { name: "Amit", age: 20, mark: 85, subject: "Math" },
+  { name: "Priya", age: 22, mark: 78, subject: "English" },
+  { name: "Ravi", age: 21, mark: 92, subject: "Science" },
+  { name: "Sneha", age: 19, mark: 67, subject: "History" },
+  { name: "Karan", age: 23, mark: 88, subject: "Computer Science" }
+])
+db.students.createIndex({ mark: 1 })
+db.students.getIndexes()
+db.students.dropIndex({ mark: 1 })
+db.students.getIndexes()
+mongoexport --db=mashupdb --collection=students --sort="{_id:1}" --limit=3 --out=sorted3.json
+
+

@@ -16,3 +16,4 @@ db.products.find({},{_id:0,name:1,price:1}).pretty()
 db.products.find({},{_id:0,name:1,category:1,price:1}).sort({price:-1}).limit(3)
 db.products.find({},{_id:0,name:1,rating:1}).sort({rating:-1})
 db.products.find({},{_id:0,name:1,rating:1}).limit(4).skip(5)
+
