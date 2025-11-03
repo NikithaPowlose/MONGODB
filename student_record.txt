@@ -1,0 +1,19 @@
+use mashupdb
+db.createCollection("students")
+ db.students.insertMany([
+...   { "_id": 1, "name": "Alice", "mark": 85 },
+...   { "_id": 2, "name": "Bob", "mark": 78 },
+...   { "_id": 3, "name": "Charlie", "mark": 92 },
+...   { "_id": 4, "name": "David", "mark": 88 },
+...   { "_id": 5, "name": "Eva", "mark": 95 },
+...   { "_id": 6, "name": "Frank", "mark": 67 },
+...   { "_id": 7, "name": "Grace", "mark": 74 },
+...   { "_id": 8, "name": "Henry", "mark": 81 }
+... ])
+mongoexport --db mashupdb --collection students --out all_students.json
+mongoexport --db mashupdb --collection students --type=csv --fields _id,name,mark --out students_record.csv
+mongoexport --db mashupdb --collection students --limit=4 --out first4.json
+mongoexport --db mashupdb --collection students --limit=3 --sort "{_id:1}" --out first3.json
+mongoexport --db mashupdb --collection students --limit=6 --skip=2 --sort "{_id:1}" --out first6.json
+
+
